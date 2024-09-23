@@ -1,0 +1,331 @@
+/* Default Css */
+#root {
+    padding-bottom: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    color: #cbcbcb;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+}
+
+html,
+body {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(
+        315deg,
+        rgb(205, 182, 218) 3%,
+        rgb(182, 208, 235) 38%,
+        rgb(199, 236, 234) 68%,
+        rgb(220, 240, 210) 98%
+    );
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+.wave {
+    background: rgba(191, 250, 235, 0.418);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+@keyframes animatedTextGradient {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Main Component css */
+
+input,
+h2 {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px 0px 0px 5px;
+    color: #454545;
+    background: #ffffff94;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+}
+
+button {
+    border: none;
+    box-shadow: none;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: 600;
+    background: #ffffff;
+    color: #818181;
+    border: 1px solid #e3e3e3;
+}
+
+body {
+    background-color: #454545;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffffb0;
+}
+
+header h1 {
+    background: radial-gradient(
+        circle at 100%,
+        #100f14,
+        #433e5e 50%,
+        #161822 75%,
+        #716d88 75%
+    );
+    font-weight: bold;
+    background-size: 200% auto;
+    color: #966d6d;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animatedTextGradient 1.5s linear infinite;
+}
+
+header span {
+    font-size: 12px;
+    color: #535353cc;
+}
+
+.playerCard {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(50vh - 77px);
+    padding: 0px 10px 10px 10px;
+    gap: 5px;
+    margin: 10px;
+    background: #ffffff73;
+    border-radius: 10px;
+}
+
+.playerContent {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 0px;
+    padding-top: 10px;
+}
+
+.playerContent h2 {
+    border-radius: 5px 0px 0px 5px;
+    color: #332a2a;
+    text-align: center;
+    font-weight: normal;
+}
+
+.nameBtn {
+    display: flex;
+    align-self: stretch;
+    justify-content: center;
+    align-items: center;
+    max-width: 40px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    border-radius: 0px 5px 5px 0px;
+    border-left: none;
+}
+
+.resetBtn {
+    font-weight: normal;
+    margin-left: 5px;
+    border-radius: 5px;
+    border-left: 1px solid #e3e3e3;
+}
+
+.playerBoard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.totalLife {
+    font-size: 100px;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+}
+
+.mainLife {
+    font-weight: bold;
+}
+
+.totalLife span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.totalLife.green-info .mainLife {
+    background: radial-gradient(
+        circle at 100%,
+        #18b10a,
+        #187c0f 50%,
+        #469223 75%,
+        #2ca82c 75%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animatedTextGradient 1.5s linear infinite;
+}
+.totalLife.orange-info .mainLife {
+    background: radial-gradient(
+        circle at 100%,
+        #eccc13,
+        #d4b712 50%,
+        #f3d423 75%,
+        #daba0a 75%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animatedTextGradient 1.5s linear infinite;
+}
+.totalLife.red-info .mainLife {
+    background: radial-gradient(
+        circle at 100%,
+        #c70c0c,
+        #e01818 50%,
+        #b10c0c 75%,
+        #b81616 75%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animatedTextGradient 1.5s linear infinite;
+}
+
+.totalLife span.negative {
+    color: #a92525;
+}
+
+.totalLife span.positive {
+    color: #217121;
+}
+
+.buttonBoard {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.buttonBoard button {
+    border: none;
+    box-shadow: none;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.buttonBoard button.red {
+}
+
+.buttonBoard button.green {
+}
+
+.buttonBoard button.confirm {
+    padding-bottom: 10px;
+    background-color: #45bb45;
+    color: white;
+    max-width: 45px;
+}
+
+.buttonBoard button.confirm.inactive {
+    opacity: 0.2;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    flex-flow: row;
+    gap: 10px;
+    background-color: #ffffff5c;
+    width: 100%;
+    padding: 10px;
+}
